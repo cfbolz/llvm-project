@@ -61,7 +61,7 @@ if (LIBOMPTARGET_DEP_LEVEL_ZERO_LIBRARY AND NOT "level_zero" IN_LIST LIBOMPTARGE
     message(FATAL_ERROR "Missing platform support")
   endif()
 else()
-  message(STATUS "Building Level Zero NG plugin for dlopened level_zero")
+  message(STATUS "Building Level Zero plugin for dlopened level_zero")
   target_include_directories(LLVMOffloadPlugin.level_zero PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/dynamic_l0
   )
