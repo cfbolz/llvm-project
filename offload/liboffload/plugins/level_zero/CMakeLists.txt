@@ -42,7 +42,7 @@ if (WIN32 AND NOT "level_zero" IN_LIST LIBOMPTARGET_DLOPEN_PLUGINS)
 endif()
 
 if (LIBOMPTARGET_DEP_LEVEL_ZERO_LIBRARY AND NOT "level_zero" IN_LIST LIBOMPTARGET_DLOPEN_PLUGINS AND NOT WIN32)
-  message(STATUS "Building Level Zero NG plugin linked against level_zero library")
+  message(STATUS "Building Level Zero plugin linked against level_zero library")
   target_include_directories(LLVMOffloadPlugin.level_zero PRIVATE
     ${LIBOMPTARGET_DEP_LEVEL_ZERO_INCLUDE_DIR}
   )
