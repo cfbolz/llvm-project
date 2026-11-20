@@ -2491,7 +2491,7 @@ define <4 x i16> @v_ctlz_zero_poison_v4i16(<4 x i16> %val) {
 ; SI-NEXT:    v_lshlrev_b32_e32 v2, 16, v2
 ; SI-NEXT:    v_lshlrev_b32_e32 v3, 16, v3
 ; SI-NEXT:    v_ffbh_u32_e32 v0, v0
-; SI-NEXT:    v_and_b32_e32 v1, 63, v1
+; SI-NEXT:    v_and_b32_e32 v1, 47, v1
 ; SI-NEXT:    v_or_b32_e32 v0, v0, v3
 ; SI-NEXT:    v_or_b32_e32 v1, v1, v2
 ; SI-NEXT:    s_setpc_b64 s[30:31]
