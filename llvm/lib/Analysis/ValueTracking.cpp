@@ -2280,6 +2280,9 @@ static void computeKnownBitsFromOperator(const Operator *I,
         computeKnownBits(I->getOperand(0), DemandedElts, Known2, Q, Depth + 1);
         bool ZeroIsPoison = match(II->getArgOperand(1), m_One());
         Known = Known.unionWith(Known2.ctlz(ZeroIsPoison));
+        // A return range can exclude all possible counts, producing poison.
+        if (Known.hasConflict())
+          Known.resetAll();
         break;
       }
       case Intrinsic::cttz: {
